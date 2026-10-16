@@ -1,21 +1,96 @@
-# Next.js template
+# Next.js User Management Client
 
-This is a Next.js template with shadcn/ui.
+A user management interface built with Next.js, React, TypeScript, and shadcn/ui. The application connects to an Express.js and MongoDB backend to perform user CRUD operations.
 
-## Adding components
+## Features
 
-To add components to your app, run the following command:
+- Display the user list
+- Add new users
+- View individual user details
+- Update existing user information
+- Delete users
+- Form-based user input
+- Reusable UI components
+- Responsive interface, where supported by the implemented layouts
+
+## Tech Stack
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- Lucide React
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm
+- The corresponding Express.js API server
+
+### Installation
+
+Clone the repository:
 
 ```bash
-npx shadcn@latest add button
+git clone YOUR_CLIENT_REPOSITORY_URL
+cd nextjs-user-management-client
+npm install
 ```
 
-This will place the ui components in the `components` directory.
+### Run the Development Server
 
-## Using components
-
-To use the components in your app, import them as follows:
-
-```tsx
-import { Button } from "@/components/ui/button";
+```bash
+npm run dev
 ```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Build for Production
+
+```bash
+npm run build
+npm start
+```
+
+## Backend Configuration
+
+This application requires the corresponding Express.js API server to be running.
+
+The API provides the following endpoints:
+
+| Method | Endpoint     | Description            |
+| ------ | ------------ | ---------------------- |
+| GET    | `/users`     | Retrieve all users     |
+| GET    | `/users/:id` | Retrieve a single user |
+| POST   | `/users`     | Create a user          |
+| PATCH  | `/users/:id` | Update a user          |
+| DELETE | `/users/:id` | Delete a user          |
+
+Configure the API base URL according to the configuration used in the application. If the API URL is hardcoded in the source, consider moving it to a Next.js public environment variable such as `NEXT_PUBLIC_API_URL`.
+
+## Available Scripts
+
+| Command             | Description                     |
+| ------------------- | ------------------------------- |
+| `npm run dev`       | Start the development server    |
+| `npm run build`     | Build the application           |
+| `npm start`         | Start the production server     |
+| `npm run lint`      | Run ESLint                      |
+| `npm run typecheck` | Check TypeScript types          |
+| `npm run format`    | Format TypeScript and TSX files |
+
+## Learning Objectives
+
+This project was built to practise connecting a Next.js frontend to a REST API, managing user data, and building reusable interfaces with modern React tooling.
+
+## Related Project
+
+**Backend:** Express MongoDB User API
+
+Add the server repository URL here after publishing the backend repository.
+
+## License
+
+This project is available for learning and educational purposes.
