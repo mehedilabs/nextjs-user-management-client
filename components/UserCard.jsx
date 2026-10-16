@@ -29,21 +29,40 @@ const UserCard = ({ user }) => {
   }
 
   return (
-    <div className="mx-auto flex w-full max-w-sm pt-0">
-      <Card className="relative mx-auto w-full max-w-sm pt-0">
-        <CardHeader>
+    <div className="mx-auto flex w-full max-w-sm">
+      <Card className="w-full overflow-hidden rounded-2xl border-slate-200 bg-white pt-0 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300 hover:shadow-xl hover:shadow-slate-900/5 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-cyan-900">
+        <div className="h-1.5 bg-gradient-to-r from-cyan-500 to-blue-600" />
+
+        <CardHeader className="gap-3 px-5 pt-5">
           <CardAction>
-            <h2>No action</h2>
+            <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+              User
+            </span>
           </CardAction>
-          <CardTitle>{user.name}</CardTitle>
-          <CardDescription> Email: {user.email}</CardDescription>
+
+          <CardTitle className="text-xl font-bold break-words text-slate-900 dark:text-white">
+            {user.name}
+          </CardTitle>
+
+          <CardDescription className="text-sm leading-6 break-all text-slate-600 dark:text-slate-400">
+            Email: {user.email}
+          </CardDescription>
         </CardHeader>
-        <CardFooter>
-          <Link href={`/users/${user._id}`} className="w-full">
-            <Button className="w-full">View Details</Button>
+
+        <CardFooter className="flex flex-wrap gap-2 px-5 pt-3 pb-5">
+          <Link href={`/users/${user._id}`} className="min-w-0 flex-1">
+            <Button className="w-full bg-cyan-600 text-white hover:bg-cyan-700">
+              View Details
+            </Button>
           </Link>
+
           <UpdateUserDialog user={user} />
-          <Button onClick={() => handleDeleteUser(_id)} variant="destructive">
+
+          <Button
+            onClick={() => handleDeleteUser(_id)}
+            variant="destructive"
+            className="flex-1 sm:flex-none"
+          >
             Delete
           </Button>
         </CardFooter>

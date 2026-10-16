@@ -87,9 +87,7 @@ This project was built to practise connecting a Next.js frontend to a REST API, 
 
 ## Related Project
 
-**Backend:** Express MongoDB User API
-
-Add the server repository URL here after publishing the backend repository.
+**Backend:** [Express MongoDB User API](https://github.com/mehedilabs/express-mongodb-user-api)
 
 ## License
 
